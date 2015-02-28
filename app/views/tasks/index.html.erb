@@ -1,0 +1,12 @@
+<h1>Tasks#index</h1>
+<p>Find me in app/views/tasks/index.html.erb</p>
+
+      <% @tasks.each do |tasks| %>
+          <tr>
+            <td><%= task.tasks %></td>
+            <!--Grocery show page unnecessary-->
+            <!--<td><%#= link_to 'Show', grocery %></td>-->
+          </tr>
+      <% end %>
+
+<%= link_to 'Edit your to do list', edit_list_path(task) %><br/></div>
