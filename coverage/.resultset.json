@@ -1,6 +1,38 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/user.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/partnerships_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/tasks_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
       "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/comment.rb": [
         1,
         1,
@@ -13,6 +45,6 @@
         null
       ]
     },
-    "timestamp": 1425428874
+    "timestamp": 1425430166
   }
 }
