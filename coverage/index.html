@@ -14,7 +14,7 @@
       <img src="./assets/0.9.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-03-03T16:49:26-08:00">2015-03-03T16:49:26-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-03-03T17:22:44-08:00">2015-03-03T17:22:44-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>8</b> files in total.
-    <b>16</b> relevant lines. 
-    <span class="green"><b>16</b> lines covered</span> and
+    <b>9</b> files in total.
+    <b>20</b> relevant lines. 
+    <span class="green"><b>20</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -106,6 +106,16 @@
         <td>4</td>
         <td>3</td>
         <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#3edbd272b06d8b8c8dcc95fa6d5172ea2fecfa9e" class="src_link" title="app/models/partnership.rb">app/models/partnership.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -186,9 +196,9 @@
   </h2>
   <a name="Models"></a>
   <div>
-    <b>3</b> files in total.
-    <b>11</b> relevant lines. 
-    <span class="green"><b>11</b> lines covered</span> and
+    <b>4</b> files in total.
+    <b>15</b> relevant lines. 
+    <span class="green"><b>15</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -211,6 +221,16 @@
         <td>4</td>
         <td>3</td>
         <td>3</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#3edbd272b06d8b8c8dcc95fa6d5172ea2fecfa9e" class="src_link" title="app/models/partnership.rb">app/models/partnership.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>5</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -594,6 +614,54 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="4">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="3edbd272b06d8b8c8dcc95fa6d5172ea2fecfa9e">
+  <div class="header">
+    <h3>app/models/partnership.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Partnership &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :friender, class_name: &quot;User&quot;, foreign_key: :friender_id, inverse_of: :requests_sent</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :friendee, class_name: &quot;User&quot;, foreign_key: :friendee_id, inverse_of: :requests_received</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_many :comments</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>
