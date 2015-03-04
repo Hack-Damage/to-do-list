@@ -2,9 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-	# before(:each) do
- 
-	# end
+
 	it "should contain a username, email, password, and matched status"  do
 			@created_user = User.create(
           username: 'fakeuser', 

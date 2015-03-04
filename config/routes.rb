@@ -1,22 +1,25 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'comments/create'
+  resources :users
+  resources :tasks
+  resources :comments
+  # get 'comments/create'
 
-  get 'comments/destroy'
+  # get 'comments/destroy'
 
-  get 'tasks/index'
+  # get 'tasks/index'
 
-  get 'tasks/edit'
+  # get 'tasks/edit'
 
-  get 'tasks/new'
+  # get 'tasks/new'
 
-  get 'users/index'
+  # get 'users/index'
 
-  get 'users/show'
+  # get 'users/show'
 
-  get 'users/edit'
+  # get 'users/edit'
 
-  get 'users/new'
+  # get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

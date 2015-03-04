@@ -39,12 +39,19 @@
         1,
         null
       ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/partnership.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/task.rb": [
         1,
         1,
         null
       ]
     },
-    "timestamp": 1425430166
+    "timestamp": 1425432164
   }
 }
