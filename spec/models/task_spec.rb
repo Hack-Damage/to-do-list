@@ -7,13 +7,21 @@ RSpec.describe Task, type: :model do
       @created_task = Task.create(name: 'MadeTask') 
     end
 
-  	it "should contain a name, and matched status"  do
+  	it "should contain a name"  do
   	  expect(@created_task.name).to eq("MadeTask") 
    	end
 
     it "is_complete should be false" do
       expect(@created_task.is_complete).to be_falsey
     end
+
+    it "should contain a matched status" do
+       expect(@created_task.user_id)
+    end   
+
+  end
+
+
   end
 
   describe "without a name" do
@@ -37,6 +45,18 @@ RSpec.describe Task, type: :model do
     it "is invalid with a duplicate name" do
       expect(@task.errors[:name]).to include("has already been taken")
 	  end
+  end
+
+  describe " a string" do
+    before do
+      @task = Task.new(name:'running')
+    end
+    it "should be valid with a name" do
+      expect(@task.valid?).to eq(true)
+    end
+     
+    it "name should be a ('string')" do
+      expect(@task.name).to be_a(String)
+    end  
   end  
     #The test does not pass because we do not have implented any code yet
-end
