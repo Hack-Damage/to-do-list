@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> testingtwo
 /coverage/
 
 # Ignore all logfiles and tempfiles.
