@@ -1,21 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-<<<<<<< HEAD
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/user.rb": [
-=======
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/models/user.rb": [
->>>>>>> master
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/user.rb": [
         1,
         null,
         null,
         1,
         null,
-        null,
-        1,
-        null,
-        null,
-        null,
         1,
         1,
         1,
@@ -23,87 +14,47 @@
         1,
         null
       ],
-<<<<<<< HEAD
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/application_helper.rb": [
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/comments_helper.rb": [
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/partnerships_helper.rb": [
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/partnerships_helper.rb": [
         1,
         null
       ],
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/tasks_helper.rb": [
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/tasks_helper.rb": [
         1,
         null
       ],
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/users_helper.rb": [
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/comment.rb": [
-=======
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/helpers/comments_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/helpers/partnerships_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/helpers/tasks_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/helpers/users_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/models/comment.rb": [
->>>>>>> master
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/comment.rb": [
         1,
         1,
         1,
         null
       ],
-<<<<<<< HEAD
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/partnership.rb": [
-=======
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/models/partnership.rb": [
->>>>>>> master
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/partnership.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-<<<<<<< HEAD
-      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/task.rb": [
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/task.rb": [
         1,
-=======
-      "/Users/elisajohnson/wdi/projects/group-proj/to-do-list/app/models/task.rb": [
->>>>>>> master
         1,
         null,
         1,
         null
       ]
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "timestamp": 1425526250
-=======
-    "timestamp": 1425587102
->>>>>>> testingtwo
-=======
-    "timestamp": 1425519806
->>>>>>> master
+    "timestamp": 1425598030
   }
 }
