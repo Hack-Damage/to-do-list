@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   
 
+  get 'welcome/index'
+
   devise_for :users
   
   resources :users
   resources :tasks
   resources :comments
+
+  
   # get 'comments/create'
 
   # get 'comments/destroy'
