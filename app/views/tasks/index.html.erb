@@ -8,7 +8,7 @@
 				<hr />
 				<p>Dashboard</p>
 				<hr />
-				<p><%= link_to 'Log Out', destroy_user_session_path %></p>
+				<p><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linker'%></p>
 			</div>
 		</div>
 		<div class="main-col">
