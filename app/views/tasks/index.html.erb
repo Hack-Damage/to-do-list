@@ -22,12 +22,15 @@
 			</div>
 			<br><br>
 			<div class="tasks">
-		  <% @current_user_tasks.each do |t| %>
+			<%= form_for current_user do |f| %>
+				<%= f.fields_for :tasks do |builder| %>
+					<%= builder.object.name %>
+					<%= builder.check_box :is_complete%>
+				<% end %>
+			<%= f.submit %>
+			<% end %>
         <tr>
-  	      <td><%= t.name %></td><br><hr />
-  	       <h1><%= t.user %> </h1>
         </tr>
-      <% end %>
         <tr>
         	<td><%= render 'form' %></td>
         </tr>
