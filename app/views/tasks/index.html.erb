@@ -24,7 +24,7 @@
 			<div class="tasks">
 			<%= form_for current_user do |f| %>
 				<%= f.fields_for :tasks do |builder| %>
-					<%= builder.object.name %>
+					<%= builder.object.name %></br>
 					<%= builder.check_box :is_complete%>
 				<% end %>
 			<%= f.submit %>
