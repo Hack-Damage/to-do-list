@@ -37,17 +37,35 @@ hr {
 .left-col {
 	background-color: white;
 	padding: 10px;
-	width: 11%;
-	float: left;
 	margin-left: 3%;
 	margin-top: 3%;
+	@media screen and (min-width: 1000px) {
+		width: 11%;
+		float: left;
+	}
+	@media screen and (max-width: 1000px) {
+		width: 100%;
+	}
+
+}
+.linked {
+	text-decoration: none;
+	color: black;
+	&:hover {
+		color: #777777;
+	}
 }
 .main-col {
 	background-color: white;
 	padding: 10px;
-	width: 77%;
-	float: left;
-	margin-left: 1%;
+	@media screen and (min-width: 1000px) {
+		width: 77%;
+		float: left;
+	}
+	@media screen and (max-width: 1000px) {
+		width: 100%;
+	}
+	margin-left: 3%;
 	margin-top: 3%;
 	margin-right: 3%;
 }
@@ -64,6 +82,9 @@ hr {
 		width: 50%;
 		float: left;
 		height: 100%;
+		&:hover {
+			background-color: #333333;
+		}
 		p {
 			text-align: center;
 			margin-top: 11px;
@@ -79,6 +100,9 @@ hr {
 		width: 50%;
 		float: left;
 		height: 100%;
+		&:hover {
+			background-color: #dddddd;
+		}
 		p {
 			text-align: center;
 			margin-top: 11px;
@@ -88,4 +112,22 @@ hr {
 			}
 		}
 	}
+}
+.notDone {
+	color: black;
+}
+.done {
+	color: orange;
+}
+.notDoneTask {
+	background-color: yellow;
+}
+.doneTask {
+	background-color: yellow;
+	width: 90%;
+}
+.deleter {
+	width: 30px;
+	height: 10px;
+	background-color: red;
 }
