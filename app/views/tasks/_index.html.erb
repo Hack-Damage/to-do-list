@@ -1,0 +1,64 @@
+<div class="all">
+	<div class="container">
+		<div class="left-col">
+			<div class="menu">
+				<h2 class="h2Title">Follow Thru</h2>
+				<hr />
+				<p>Your Todo List</p>
+				<hr />
+				<p>Dashboard</p>
+				<hr />
+				<p><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linker'%></p>
+			</div>
+		</div>
+		<div class="main-col">
+			<div class="switcher">
+				<div class="activeSwitch" class="">
+					<p><%= link_to "Your Tasks", tasks_path, :class => "linker" %></p>
+				</div>
+				<div class="inactiveSwitch">
+					<p><%= link_to "Your Partner's Tasks", tasks_path, :class => 'linker' %></p>
+				</div>
+			</div>
+			<br><br>
+			<div class="tasks">
+			<%= form_for current_user do |f| %>
+				<%= f.fields_for :tasks do |builder| %>
+					<%= builder.object.name %></br><hr>
+					<%#= builder.check_box :is_complete%>
+				<% end %>
+			<%#= f.submit %>
+			<% end %>
+        <tr>
+        </tr>
+        <tr>
+        	<td><%= render 'form' %></td>
+        </tr>
+
+
+      
+    	</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+	$('.inactiveSwitch').click(function() {
+		var $this = $(this);
+		if(!$this.hasClass('inactiveSwitch'))
+			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+			$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
+			$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
+	});
+		$('.activeSwitch').click(function() {
+		var $this = $(this);
+		if(!$this.hasClass('inactiveSwitch'))
+			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+			$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
+	});
+</script>
+
+
+<%#= link_to 'Edit your to do list', edit_list_path(task) %>

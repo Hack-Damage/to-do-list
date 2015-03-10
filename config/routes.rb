@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :tasks
   resources :comments
 
-  
+  root 'tasks#index'
   # get 'comments/create'
 
   # get 'comments/destroy'
