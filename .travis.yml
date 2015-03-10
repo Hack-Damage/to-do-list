@@ -5,7 +5,14 @@ branches:
   only:
   - master
 install:
-- "travis_retry bundle install"
-
+- travis_retry bundle install
 before_script:
 - psql -c 'create database fllwthru_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: Fdght7DxR5xTz4AL9x96S6U5rNNgcwiR79s9GY/dxqcJ8Sf6jLzzWpOQjsDK6CURfs5aMj4VkRb5cnju8r8TLbdNSo7ky2U/wvChWAjfEA3CQE7g9hfuGreHCDQXoGUsWXiyU0QPlDt3bzeLVbXW+m5tLP02Jspo5jYVbXk9IT8=
+  app: fllwthru
+  run:
+  - "rake db:migrate"
+  - restart
