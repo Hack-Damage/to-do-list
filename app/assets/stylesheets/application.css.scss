@@ -27,6 +27,10 @@ hr {
 	border-top: 1px solid #123456;
 	margin: 1em 0; padding: 0;
 }
+a {
+	text-decoration: none;
+	color: black;
+}
 .container{
 	font-family: Lato, sans-serif;
 	.h2Title {
@@ -136,9 +140,17 @@ hr {
 		text-decoration: line-through;
 	}
 	.deleter {
-	float: left;
+		float: left;
 	}
 }
 .xButton {
 
 }
+.dashboard {
+	margin: 20px;
+}
+.dashLink {
+	text-decoration: none;
+	color: black;
+}
+
