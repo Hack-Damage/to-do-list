@@ -120,16 +120,16 @@ hr {
 // 	color: orange;
 // }
 .notDoneTask {
-	padding-left: 30px;
+	padding-left: 29px;
 	.taskText {
 		color: black;
 	}
 	.deleter {
 	float: left;
 	display: none;
+	}
 }
 
-}
 .doneTask {
 	// background-color: green;
 	.taskText {
@@ -139,4 +139,6 @@ hr {
 	float: left;
 	}
 }
+.xButton {
 
+}
