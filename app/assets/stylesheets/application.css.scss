@@ -113,21 +113,32 @@ hr {
 		}
 	}
 }
-.notDone {
-	color: black;
-}
-.done {
-	color: orange;
-}
+// .notDone {
+// 	color: black;
+// }
+// .done {
+// 	color: orange;
+// }
 .notDoneTask {
-	background-color: yellow;
+	padding-left: 29px;
+	.taskText {
+		color: black;
+	}
+	.deleter {
+	float: left;
+	display: none;
+	}
 }
+
 .doneTask {
-	background-color: yellow;
-	width: 90%;
+	// background-color: green;
+	.taskText {
+		text-decoration: line-through;
+	}
+	.deleter {
+	float: left;
+	}
 }
-.deleter {
-	width: 30px;
-	height: 10px;
-	background-color: red;
+.xButton {
+
 }

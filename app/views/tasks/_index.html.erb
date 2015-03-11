@@ -24,13 +24,16 @@
 			<div class="tasks">
 			<%= form_for current_user do |f| %>
 				<%= f.fields_for :tasks do |builder| %>
+
 					<div class="notDoneTask">
-						<span class="notDone">
+					<div class="deleter">
+						<span class='xButton'>&nbsp&nbspX&nbsp&nbsp&nbsp&nbsp</span>
+					</div>
+						<span class="taskText">
 							<%= builder.object.name %>
 						</span>
-						<div class="deleter">
-						</div>
 					</div>
+
 					<hr>
 					<%#= builder.check_box :is_complete%>
 				<% end %>
@@ -67,14 +70,14 @@
 			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
 	});
 	// Switch between task done and not done.
-	$('.notDone').click(function(){
-		$(this).toggleClass('done')
-	})
 	// make the delete button appear
 	$('.notDoneTask').click(function(){
-		$(this).toggleClass('doneTask');
-		$('deleter').show();
+		$(this).toggleClass('doneTask').toggleClass('notDoneTask');
+		if($(this).hasClass('doneTask')){
+			// $('.deleter').show();
+		}
 	})
+
 </script>
 
 
