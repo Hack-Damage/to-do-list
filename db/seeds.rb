@@ -10,5 +10,8 @@ Task.create([
                 {name: "Let's make a task", is_complete: false, user_id: 2, },
                 {name: "Clean kitchen", is_complete: false, user_id: 2, },
                 {name: "Walk Grandpa", is_complete: false, user_id: 2, },
-                {name: "Stretch", is_complete: false, user_id: 2, }
+                {name: "Stretch", is_complete: false, user_id: 2, },
+                {name: "Go to the gym", is_complete: true, user_id: 2, },
+                {name: "Get groceries", is_complete: true, user_id: 2, },
+                {name: "Call mom", is_complete: true, user_id: 2, },
             ])
