@@ -2,13 +2,13 @@
 	<div class="container">
 		<div class="left-col">
 			<div class="menu">
-				<h2 class="h2Title">Follow Thru</h2>
+				<h2 class="h2Title"><%= link_to "Follow Thru", tasks_path, :class => 'linked' %></h2>
 				<hr />
-				<p>Your Todo List</p>
+				<p><%= link_to "Your Tasks", tasks_path, :class => 'linked' %></p>
 				<hr />
-				<p>Dashboard</p>
+				<p><%= link_to "Dashboard", tasks_path, :class => 'linked' %></p>
 				<hr />
-				<p><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linker'%></p>
+				<p><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linked'%></p>
 			</div>
 		</div>
 		<div class="main-col">
@@ -24,7 +24,14 @@
 			<div class="tasks">
 			<%= form_for current_user do |f| %>
 				<%= f.fields_for :tasks do |builder| %>
-					<%= builder.object.name %></br><hr>
+					<div class="notDoneTask">
+						<span class="notDone">
+							<%= builder.object.name %>
+						</span>
+						<div class="deleter">
+						</div>
+					</div>
+					<hr>
 					<%#= builder.check_box :is_complete%>
 				<% end %>
 			<%#= f.submit %>
@@ -44,6 +51,7 @@
 
 
 <script>
+	// Switch between User and Partners tasks. 
 	$('.inactiveSwitch').click(function() {
 		var $this = $(this);
 		if(!$this.hasClass('inactiveSwitch'))
@@ -51,13 +59,22 @@
 			$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
 			$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
 	});
-		$('.activeSwitch').click(function() {
+	$('.activeSwitch').click(function() {
 		var $this = $(this);
 		if(!$this.hasClass('inactiveSwitch'))
 			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
 			$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
 			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
 	});
+	// Switch between task done and not done.
+	$('.notDone').click(function(){
+		$(this).toggleClass('done')
+	})
+	// make the delete button appear
+	$('.notDoneTask').click(function(){
+		$(this).toggleClass('doneTask');
+		$('deleter').show();
+	})
 </script>
 
 
