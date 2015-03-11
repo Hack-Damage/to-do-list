@@ -1,0 +1,18 @@
+<div class="all">
+	<div class="container">
+		<div class="left-col">
+			<div class="menu">
+				<h2 class="h2Title"><%= link_to "Follow Thru", tasks_path, :class => 'linked' %></h2>
+				<hr />
+				<p><%= link_to "Your Tasks", tasks_path, :class => 'linked' %></p>
+				<hr />
+				<p><%= link_to "Dashboard", dashboard_index_path, :class => 'linked' %></p>
+				<hr />
+				<p><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'linked'%></p>
+			</div>
+		</div>
+		<div class="main-col">
+			<h1>DASHBOARD</h1>
+   		</div>
+	</div>
+</div>
