@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+ resources :partnerships, module: "user"
 
   get 'welcome/index'
 
