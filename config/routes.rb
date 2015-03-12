@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   resources :dashboard
   get 'welcome/index'
-
+  get 'tasks/partner'
   devise_for :users
   
   resources :users
