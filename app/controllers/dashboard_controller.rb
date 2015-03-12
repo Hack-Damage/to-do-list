@@ -1,17 +1,16 @@
 class DashboardController < ApplicationController
 	def update
 		@current_person = User.where(id: params[:id]).first
-		@current_person.is_matched = false
+		@current_person.is_matched = true
 		all_users = User.all
 		prng = Random.new
 
 		# all_users[prng.rand(all_users.count)].id #need to have where is_match is not equal to true.
 		rando_user = all_users[prng.rand(all_users.count)]
-		if ((rando_user.is_matched == nil) || (rando_user.is_matched == false)) && (rando_user != rando_user)
+		if ((rando_user.is_matched == nil) || (rando_user.is_matched == false)) && (@current_person.id != rando_user.id)
 			@current_person.matchee = rando_user.id
 			rando_user.matchee = @current_person.id
 			if (@current_person.save && rando_user.save)
-				@current_person.is_matched = true
 				redirect_to tasks_path
 			else
 				raise params.inspect
