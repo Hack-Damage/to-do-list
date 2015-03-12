@@ -28,9 +28,23 @@ class TasksController < ApplicationController
   	end
   end
 
+  def update
+    task_update = Task.where(id: params[:id]).first
+    task_update.is_complete = true
+    if task_update.save
+      redirect_to tasks_path
+    else
+      raise params.inspect
+    end
+    # puts "========================"
+    # puts task_update.is_complete
+    # puts "========================"
+    # redirect_to tasks_path
+  end
+
 private
   def task_params
       params.require(:task).permit(
-        :name, :user_id)
+        :name, :user_id, :is_complete)
   end
 end
