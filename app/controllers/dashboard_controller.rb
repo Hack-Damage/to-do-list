@@ -1,15 +1,17 @@
 class DashboardController < ApplicationController
 	def update
 		@current_person = User.where(id: params[:id]).first
+		@current_person.is_matched = false
 		all_users = User.all
 		prng = Random.new
 
 		# all_users[prng.rand(all_users.count)].id #need to have where is_match is not equal to true.
 		rando_user = all_users[prng.rand(all_users.count)]
-		if rando_user.is_matched == nil
+		if ((rando_user.is_matched == nil) || (rando_user.is_matched == false)) && (rando_user != rando_user)
 			@current_person.matchee = rando_user.id
 			rando_user.matchee = @current_person.id
 			if (@current_person.save && rando_user.save)
+				@current_person.is_matched = true
 				redirect_to tasks_path
 			else
 				raise params.inspect
@@ -21,4 +23,6 @@ class DashboardController < ApplicationController
 	# This only goes one way. I need to go two ways, having matchee being the inverse of matcher. 
 	# SO: y is the other person to whom youre being matched. 
 	# change y.matchee so that their id is equal to current_person. 
+	# TODO: Fix:
+	# Current user can be matched to themselves. 
 end
