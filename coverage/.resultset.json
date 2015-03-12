@@ -12,6 +12,7 @@
         1,
         1,
         1,
+        1,
         null
       ],
       "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/application_helper.rb": [
@@ -19,6 +20,10 @@
         null
       ],
       "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/comments_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/dashboard_helper.rb": [
         1,
         null
       ],
@@ -32,6 +37,82 @@
       ],
       "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/users_helper.rb": [
         1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
         null
       ],
       "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/comment.rb": [
@@ -55,6 +136,6 @@
         null
       ]
     },
-    "timestamp": 1425598030
+    "timestamp": 1426202489
   }
 }
