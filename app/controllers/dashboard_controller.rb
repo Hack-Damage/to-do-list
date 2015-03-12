@@ -1,6 +1,11 @@
 class DashboardController < ApplicationController
 	def update
 		@current_person = User.where(id: params[:id]).first
+		if @current_person.is_matched == true
+			puts "======================"
+			puts "#{@current_person} IS ALREADY MATCHED!!!"
+			puts "======================"
+		end
 		@current_person.is_matched = true
 		all_users = User.all
 		prng = Random.new
@@ -16,7 +21,7 @@ class DashboardController < ApplicationController
 				raise params.inspect
 			end
 		else
-			raise params.inspect			
+			redirect_to tasks_path	
 		end
 	end
 	# This only goes one way. I need to go two ways, having matchee being the inverse of matcher. 
