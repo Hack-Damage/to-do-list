@@ -20,7 +20,7 @@
 				<div class="profile">
 					<h2>Profile</h2>
 						<b><p><%= link_to 'Edit profile', edit_user_registration_path, :class => 'dashLink' %> </p></b>
-						<b><a href="#">MATCH / REMATCH</a></b>
+						<b><%= link_to 'Match / Rematch', dashboard_path(current_user.id), method: :patch %></b>
 				</div>
 
 

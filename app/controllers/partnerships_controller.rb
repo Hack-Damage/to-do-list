@@ -1,2 +1,3 @@
 class PartnershipsController < ApplicationController
+
 end
