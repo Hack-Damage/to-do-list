@@ -19,12 +19,10 @@ ActiveRecord::Schema.define(version: 20150312035401) do
   create_table "comments", force: :cascade do |t|
     t.string   "title"
     t.integer  "user_id"
-    t.integer  "partnership_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "comments", ["partnership_id"], name: "index_comments_on_partnership_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "partnerships", force: :cascade do |t|
@@ -60,13 +58,13 @@ ActiveRecord::Schema.define(version: 20150312035401) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.integer  "partner_id"
     t.integer  "matchee"
     t.integer  "matcher"
   end
 
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "comments", "partnerships"
   add_foreign_key "comments", "users"
   add_foreign_key "tasks", "users"
 end
