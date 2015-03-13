@@ -1,3 +1,8 @@
+
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+
 <div class="all">
 	<div class="container">
 		<div class="left-col">
@@ -16,7 +21,88 @@
 			<div class="dashboard">
 				<div class="stats">
 				<h2>Stats</h2>
+                  <script>
+
+                      //<!--setting the calendar size-->
+                      var width = 960,
+                              height = 136,
+                              cellSize = 17; // cell size
+
+                      //setting the day format
+                      var day = d3.time.format("%w"),
+                              week = d3.time.format("%U"),
+                              percent = d3.format(".1%"),
+                              format = d3.time.format("%Y-%m-%d");
+
+                      //setting the color
+                      var color = d3.scale.quantize()
+                              .domain([-.05, .05])
+                              .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
+
+                      //setting the svg window
+                      var svg = d3.select("body").selectAll("svg")
+                              .data(d3.range(2015, 2016))
+                              .enter().append("svg")
+                              .attr("width", width)
+                              .attr("height", height)
+                              .attr("class", "RdYlGn")
+                              .append("g")
+                              .attr("transform", "translate(" + ((width - cellSize * 53) / 2) + "," + (height - cellSize * 7 - 1) + ")");
+
+                      svg.append("text")
+                              .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")
+                              .style("text-anchor", "middle")
+                              .text(function(d) { return d; });
+
+                      var rect = svg.selectAll(".day")
+                              .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+                              .enter().append("rect")
+                              .attr("class", "day")
+                              .attr("width", cellSize)
+                              .attr("height", cellSize)
+                              .attr("x", function(d) { return week(d) * cellSize; })
+                              .attr("y", function(d) { return day(d) * cellSize; })
+                              .datum(format);
+
+                      //.text(function(d) { return d; });
+
+                      svg.selectAll(".month")
+                              .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+                              .enter().append("path")
+                              .attr("class", "month")
+                              .attr("d", monthPath);
+
+
+                      var dataset;
+                      $.getJSON('/tasks.json',
+                              function(data) {
+                                  // the code inside this function will be run,
+                                  // when the $.getJSON finishes retrieving the data
+                                  console.log(data);
+                                  dataset = data;
+
+//                                  $("svg.day").html(dataset);
+//                                  .updated(function(d){
+//                                      return(d[0].updated_at)
+//                                  })
+                              }
+                      );
+
+                      function monthPath(t0) {
+                          var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
+                                  d0 = +day(t0), w0 = +week(t0),
+                                  d1 = +day(t1), w1 = +week(t1);
+                          return "M" + (w0 + 1) * cellSize + "," + d0 * cellSize
+                                  + "H" + w0 * cellSize + "V" + 7 * cellSize
+                                  + "H" + w1 * cellSize + "V" + (d1 + 1) * cellSize
+                                  + "H" + (w1 + 1) * cellSize + "V" + 0
+                                  + "H" + (w0 + 1) * cellSize + "Z";
+                      }
+
+                      d3.select(self.frameElement).style("height", "2910px");
+                  </script>
 				</div>
+
 				<div class="profile">
 					<h2>Profile</h2>
 						<b><p><%= link_to 'Edit profile', edit_user_registration_path, :class => 'dashLink' %> </p></b>
@@ -28,3 +114,4 @@
   	</div>
 	</div>
 </div>
+

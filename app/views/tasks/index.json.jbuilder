@@ -3,5 +3,6 @@ json.tasks @current_user_tasks do |task|
   json.name task.name
   json.user_id task.user_id
   json.is_complete task.is_complete
+  json.updated_at task.updated_at
   end
 end
