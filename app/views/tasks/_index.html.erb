@@ -53,22 +53,22 @@
 </div>
 
 
-<script>
-	// Switch between User and Partners tasks. 
-	$('.inactiveSwitch').click(function() {
-		var $this = $(this);
-		if(!$this.hasClass('inactiveSwitch'))
-			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
-			$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
-	});
-	$('.activeSwitch').click(function() {
-		var $this = $(this);
-		if(!$this.hasClass('inactiveSwitch'))
-			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
-	});
+// <script>
+// 	// Switch between User and Partners tasks. 
+// 	$('.inactiveSwitch').click(function() {
+// 		var $this = $(this);
+// 		if(!$this.hasClass('inactiveSwitch'))
+// 			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+// 			$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
+// 			$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
+// 	});
+// 	$('.activeSwitch').click(function() {
+// 		var $this = $(this);
+// 		if(!$this.hasClass('inactiveSwitch'))
+// 			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+// 			$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+// 			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
+// 	});
 	// Switch between task done and not done.
 	// make the delete button appear
 	$('.notDoneTask').click(function(){
@@ -78,7 +78,7 @@
 		}
 	})
 
-</script>
+// </script>
 
 
 <%#= link_to 'Edit your to do list', edit_list_path(task) %>

@@ -1,4 +1,5 @@
-<%= form_for current_user do |f| %>
+
+<%= form_for @current_partner do |f| %>
 	<%= f.fields_for :tasks do |builder| %>
 		<div class="notDoneTask">
 			<div class="deleter">
@@ -15,4 +16,5 @@
 		<% end %>
 		<%#= f.submit %>
 		<% end %>
+		
 		</hr>

@@ -9,6 +9,9 @@ class TasksController < ApplicationController
     #     task.name
     #   end
     # end
+
+    # @partner_tasks = Task.where(user_id:current_user.matchee)
+    @current_partner = User.where(id:current_user.matchee).first
   end
 
   def edit
