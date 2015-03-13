@@ -4,16 +4,13 @@ class TasksController < ApplicationController
     #assign an instance variable to the current user tasks so we can list these
     #on the tasks page for the user that is signed in
     @current_user_tasks = Task.where(user_id:current_user)
-    # @current_user_tasks.each do |task|
-    #   if task.is_complete == false
-    #     task.name
-    #   end
-    # end
-
-    # @partner_tasks = Task.where(user_id:current_user.matchee)
+    @current_user_comments = Comment.where(user_id:current_user)
     if current_user
       @current_partner = User.where(id:current_user.matchee).first
     end
+    @current_user_comments_recieved = Comment.where(user_id:current_user.matchee) 
+    @comments = @current_user_comments + @current_user_comments_recieved
+   
   end
 
   def edit
