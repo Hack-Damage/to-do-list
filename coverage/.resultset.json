@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/user.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/user.rb": [
         1,
         null,
         null,
@@ -12,42 +12,120 @@
         1,
         1,
         1,
-        null
-      ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/comments_helper.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/partnerships_helper.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/tasks_helper.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/dashboard_helper.rb": [
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/helpers/users_helper.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/partnerships_helper.rb": [
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/comment.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/tasks_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/helpers/welcome_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/controllers/users_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/controllers/welcome_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/comment.rb": [
         1,
         1,
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/partnership.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/partnership.rb": [
         1,
         1,
         1,
         1,
         null
       ],
-      "/Users/daniel/Dropbox/wdi/projects/p33/to-do-list/app/models/task.rb": [
+      "/Users/jocelynakkurt/wdi14/to-do-list/app/models/task.rb": [
         1,
         1,
         null,
@@ -55,6 +133,6 @@
         null
       ]
     },
-    "timestamp": 1425598030
+    "timestamp": 1426203493
   }
 }
