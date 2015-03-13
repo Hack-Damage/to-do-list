@@ -36,6 +36,7 @@
 
                       //setting the color
                       var color = d3.scale.quantize()
+//                              .domain([0, 1])
                               .domain([-.05, .05])
                               .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
 
@@ -63,6 +64,10 @@
                               .attr("x", function(d) { return week(d) * cellSize; })
                               .attr("y", function(d) { return day(d) * cellSize; })
                               .datum(format);
+                      for (var l = 0; l< rect[0].length; l++){
+                          document.getElementsByTagName(rect[0][l].style.fill = "blue");
+                          console.log(rect[0][l]);
+                      };
 
                       //.text(function(d) { return d; });
 
@@ -80,13 +85,34 @@
                                   // when the $.getJSON finishes retrieving the data
                                   console.log(data);
                                   dataset = data;
+//                                  console.log(data.updated_at);
+//                                  $.dataset.updated_at(function(result){
+//                                      result = JSON.parse(result);
+//                                      console.log(result);
+//                                  });
+
+                                  var objies = $.each(data.tasks, function(){
+//                                      var value = data.tasks.updated_at;
+                                  });
+
+//                                  var updateTimes;
+                                  $.each(objies, function(i){
+                                      console.log(objies[i].updated_at.substring(0,10));
+                                      updateTimes = objies[i].updated_at.substring(0,10);
+                                  });
+//
+//                                  rect.filter(updateTimes, function(d) { return d in data; })
+//                                          .attr("class", function(d) { return "day " + color(data[d]); })
+//                                          .select("title")
+//                                          .text(function(d) { return d + ": " + percent(data[d]); });
+                              });
 
 //                                  $("svg.day").html(dataset);
 //                                  .updated(function(d){
 //                                      return(d[0].updated_at)
 //                                  })
-                              }
-                      );
+//                              }
+//                      );
 
                       function monthPath(t0) {
                           var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
