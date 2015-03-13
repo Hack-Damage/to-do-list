@@ -11,7 +11,9 @@ class TasksController < ApplicationController
     # end
 
     # @partner_tasks = Task.where(user_id:current_user.matchee)
-    @current_partner = User.where(id:current_user.matchee).first
+    if current_user
+      @current_partner = User.where(id:current_user.matchee).first
+    end
   end
 
   def edit
