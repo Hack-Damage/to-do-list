@@ -17,34 +17,56 @@
 					<p><%= link_to "Your Tasks", tasks_path, :class => "linker" %></p>
 				</div>
 				<div class="activeSwitch">
-					<p><%= link_to "Your Partner's Tasks", tasks_path, :class => 'linker' %></p>
+					<p><%= link_to "Your Partner's Tasks", tasks_partner_path, :class => 'linker' %></p>
 				</div>
 			</div>
 			<br><br>
 			<div class="tasks">
-			<%= form_for current_user do |f| %>
-				<%= f.fields_for :tasks do |builder| %>
+				<% if @partner_tasks_incomplete == nil %>
+				<% else %>
+				<% @partner_tasks_incomplete.each do |t| %>
+				<div class="notDoneTask">
+					<div class="deleter">
+						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+					</div>
+					<span class="taskText"><%= t.name %></span>
+				</div>
 
+				<% end %>
+				<% end %>
+
+<!-- 			<%#= form_for current_user do |f| %>
+				<%#= f.fields_for :tasks do |builder| %>
+				<%# if builder.object.is_complete == false %>
 					<div class="notDoneTask">
 					<div class="deleter">
-						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(builder.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+						<span class='xButton'>&nbsp&nbsp<%#= link_to "X", task_path(builder.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
 					</div>
 						<span class="taskText">
-							<%= builder.object.name %>
+							<%# if builder.object.is_complete == false %>
+								<%#= builder.object.name %>
+							<%# end %>
 						</span>
 					</div>
-
+ -->
 					<hr>
+					<%# end %>
 					<%#= builder.check_box :is_complete%>
-				<% end %>
+				<%# end %>
 			<%#= f.submit %>
-			<% end %>
+			<%# end %>
         <tr>
         </tr>
         <tr>
-        	<td><%= render 'form' %></td>
+        	<td><%#= render 'form' %></td>
         </tr>
-
+        <% if @comments == nil %>
+        <% else %>
+        <% @comments.each do |c| %>
+        	<%= c.title %>
+        	<%= c.user.email %>
+        <% end %>	
+        <% end %>
 
       
     	</div>
@@ -55,20 +77,20 @@
 
 <script>
 	// Switch between User and Partners tasks. 
-	$('.inactiveSwitch').click(function() {
-		var $this = $(this);
-		if(!$this.hasClass('inactiveSwitch'))
-			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
-			$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
-	});
-	$('.activeSwitch').click(function() {
-		var $this = $(this);
-		if(!$this.hasClass('inactiveSwitch'))
-			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
-	});
+	// $('.inactiveSwitch').click(function() {
+	// 	var $this = $(this);
+	// 	if(!$this.hasClass('inactiveSwitch'))
+	// 		$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+	// 		$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
+	// 		$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
+	// });
+	// $('.activeSwitch').click(function() {
+	// 	var $this = $(this);
+	// 	if(!$this.hasClass('inactiveSwitch'))
+	// 		$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+	// 		$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+	// 		$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
+	// });
 	// Switch between task done and not done.
 	// make the delete button appear
 	$('.notDoneTask').click(function(){
@@ -78,7 +100,7 @@
 		}
 	})
 
-</script>
+// </script>
 
 
 <%#= link_to 'Edit your to do list', edit_list_path(task) %>

@@ -22,26 +22,39 @@
 			</div>
 			<br><br>
 			<div class="tasks">
-			<%= form_for current_user do |f| %>
-				<%= f.fields_for :tasks do |builder| %>
-				<% if builder.object.is_complete == false %>
+
+				<% @current_user_incomplete.each do |t| %>
+				<div class="notDoneTask">
+					<div class="deleter">
+						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+					</div>
+					<span class="taskText"><%= t.name %></span>
+					
+					<hr>
+				</div>
+
+
+				<% end %>
+
+<!-- 			<%#= form_for current_user do |f| %>
+				<%#= f.fields_for :tasks do |builder| %>
+				<%# if builder.object.is_complete == false %>
 					<div class="notDoneTask">
 					<div class="deleter">
-						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(builder.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+						<span class='xButton'>&nbsp&nbsp<%#= link_to "X", task_path(builder.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
 					</div>
 						<span class="taskText">
-							<% if builder.object.is_complete == false %>
-								<%= builder.object.name %>
-							<% end %>
+							<%# if builder.object.is_complete == false %>
+								<%#= builder.object.name %>
+							<%# end %>
 						</span>
 					</div>
-
-					<hr>
-					<% end %>
+ -->
+					<%# end %>
 					<%#= builder.check_box :is_complete%>
-				<% end %>
+				<%# end %>
 			<%#= f.submit %>
-			<% end %>
+			<%# end %>
         <tr>
         </tr>
         <tr>
@@ -58,23 +71,23 @@
 	</div>
 </div>
 
-
+	
 <script>
 	// Switch between User and Partners tasks. 
-	$('.inactiveSwitch').click(function() {
-		var $this = $(this);
-		if(!$this.hasClass('inactiveSwitch'))
-			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
-			$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
-	});
-	$('.activeSwitch').click(function() {
-		var $this = $(this);
-		if(!$this.hasClass('inactiveSwitch'))
-			$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
-			$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
-	});
+	// $('.inactiveSwitch').click(function() {
+	// 	var $this = $(this);
+	// 	if(!$this.hasClass('inactiveSwitch'))
+	// 		$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+	// 		$('.activeSwitch').toggleClass('activeSwitch').toggleClass("inactiveSwitch");
+	// 		$this.toggleClass("inactiveSwitch").toggleClass("activeSwitch");
+	// });
+	// $('.activeSwitch').click(function() {
+	// 	var $this = $(this);
+	// 	if(!$this.hasClass('inactiveSwitch'))
+	// 		$('.inactiveSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+	// 		$('.activeSwitch').toggleClass('inactiveSwitch').toggleClass("activeSwitch");
+	// 		$this.toggleClass("activeSwitch").toggleClass("inactiveSwitch");
+	// });
 	// Switch between task done and not done.
 	// make the delete button appear
 	$('.notDoneTask').click(function(){

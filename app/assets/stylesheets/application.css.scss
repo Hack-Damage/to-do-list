@@ -123,10 +123,11 @@ a {
 // .done {
 // 	color: orange;
 // }
+
 .notDoneTask {
-	padding-left: 29px;
 	.taskText {
 		color: black;
+		padding-left: 29px;
 	}
 	.deleter {
 	float: left;

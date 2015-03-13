@@ -21,7 +21,7 @@ class DashboardController < ApplicationController
 				raise params.inspect
 			end
 		else
-			redirect_to tasks_path	
+				
 		end
 	end
 	# This only goes one way. I need to go two ways, having matchee being the inverse of matcher. 
