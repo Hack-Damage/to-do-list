@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
   end
 
@@ -16,4 +17,5 @@ class UsersController < ApplicationController
   	u.update(params.require(:user).permit(:id, :username, :tasks_attributes => [:id, :is_complete]))
   	redirect_to tasks_path
   end
+
 end
