@@ -24,7 +24,7 @@
 			<div class="tasks">
 			<%= form_for current_user do |f| %>
 				<%= f.fields_for :tasks do |builder| %>
-
+				<% if builder.object.is_complete == false %>
 					<div class="notDoneTask">
 					<div class="deleter">
 						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(builder.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
@@ -37,6 +37,7 @@
 					</div>
 
 					<hr>
+					<% end %>
 					<%#= builder.check_box :is_complete%>
 				<% end %>
 			<%#= f.submit %>
