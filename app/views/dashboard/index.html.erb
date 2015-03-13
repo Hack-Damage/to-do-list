@@ -20,7 +20,11 @@
 				<div class="profile">
 					<h2>Profile</h2>
 						<b><p><%= link_to 'Edit profile', edit_user_registration_path, :class => 'dashLink' %> </p></b>
-						<b><%= link_to 'Match / Rematch', dashboard_path(current_user.id), method: :patch %></b>
+						<% if current_user.matchee == nil %>
+							<b><%= link_to 'Match up with another user', dashboard_path(current_user.id), method: :patch %>
+						<% else %>
+							<%= link_to "You're already matched up, but clicking this will match you up with another user", dashboard_path(current_user.id), method: :patch %></b>
+						<% end %>
 				</div>
 
 
