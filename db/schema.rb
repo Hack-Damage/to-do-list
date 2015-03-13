@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20150312035401) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.integer  "partner_id"
     t.integer  "matchee"
     t.integer  "matcher"
   end
