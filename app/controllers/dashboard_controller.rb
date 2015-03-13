@@ -2,9 +2,8 @@ class DashboardController < ApplicationController
 	def update
 		@current_person = User.where(id: params[:id]).first
 		if @current_person.is_matched == true
-			puts "======================"
-			puts "#{@current_person} IS ALREADY MATCHED!"
-			puts "======================"
+			update_matched = User.where(id: current_user.matchee).first
+			update_matched.is_matched = false
 		end
 		@current_person.is_matched = true
 		all_users = User.all

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'tasks/partner'
   devise_for :users
-  
+  resources :partner
   resources :users
   resources :tasks
   resources :comments

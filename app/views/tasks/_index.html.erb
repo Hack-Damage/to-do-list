@@ -17,23 +17,24 @@
 					<p><%= link_to "Your Tasks", tasks_path, :class => "linker" %></p>
 				</div>
 				<div class="inactiveSwitch">
-					<p><%= link_to "Your Partner's Tasks", tasks_partner_path, :class => 'linker' %></p>
+					<p><%= link_to "Your Partner's Tasks", partner_index_path, :class => 'linker' %></p>
 				</div>
 			</div>
 			<br><br>
 			<div class="tasks">
-
+				<%# if @current_user_incomplete == nil %>
+				<%# else %>
 				<% @current_user_incomplete.each do |t| %>
 				<div class="notDoneTask">
 					<div class="deleter">
 						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
 					</div>
 					<span class="taskText"><%= t.name %></span>
-					
+
 					<hr>
 				</div>
 
-
+				<%# end %>
 				<% end %>
 
 <!-- 			<%#= form_for current_user do |f| %>
