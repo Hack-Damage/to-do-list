@@ -47,7 +47,10 @@
         <tr>
         	<td><%= render 'form' %></td>
         </tr>
-
+        <% @comments.each do |c| %>
+        	<%= c.title %>
+        	<%= c.user.email %>
+        <%end %>	
 
       
     	</div>
