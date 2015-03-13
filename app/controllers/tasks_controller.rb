@@ -46,10 +46,9 @@ class TasksController < ApplicationController
     # puts "========================"
     # redirect_to tasks_path
   end
-
 private
   def task_params
-      params.require(:task).permit(
+    params.require(:task).permit(
         :name, :user_id, :is_complete)
   end
 end

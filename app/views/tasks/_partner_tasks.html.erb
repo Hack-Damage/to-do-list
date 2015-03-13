@@ -1,20 +1,17 @@
 
-<%= form_for @current_partner do |f| %>
-	<%= f.fields_for :tasks do |builder| %>
+<%= form_for partner do |f| %>
+	<%= f.fields_for :tasks do |task| %>
 		<div class="notDoneTask">
 			<div class="deleter">
 				<span class='xButton'>&nbsp&nbsp
-				<%= link_to "X", task_path(builder.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp
+				<%= link_to "X", task_path(task.object.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp
 				</span>
 			</div>
 			<span class="taskText">
-				<%= builder.object.name %>
+				<%= task.object.name %>
 			</span>
 		</div>
 		<hr>
-		<%#= builder.check_box :is_complete%>
 		<% end %>
-		<%#= f.submit %>
 		<% end %>
-		
 		</hr>

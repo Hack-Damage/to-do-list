@@ -9,4 +9,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :tasks
   accepts_nested_attributes_for :tasks
+  def partner
+    User.where(id:self.matchee).first
+  end
 end
