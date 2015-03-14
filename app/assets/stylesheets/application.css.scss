@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -153,4 +154,14 @@ a {
 	text-decoration: none;
 	color: black;
 }
+
+.commentbox {
+ 
+  border-width:0 4px 4px 0;
+  display:block;
+  height:1em; width:.5em;
+  margin-top:-.9em;
+  position:relative;
+}	
+
 

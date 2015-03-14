@@ -1,0 +1,15 @@
+<div class="commenbox">
+<h2>COMMENTS</h2>
+
+ <% @comments.each do |c| %>
+   <b><%= c.user.email.split('@').first %></b> :
+    <%= c.title %>  <i>(<%= time_ago_in_words(c.created_at) %>)</i><br />
+    
+<%end %>   
+
+<h1>ADD COMMENTS :</h1>
+<%= form_for Comment.new do |c| %>
+    <%= c.text_field :title %>
+    <%= c.submit "Add a new comment" %>
+ <%end %>	
+</div>

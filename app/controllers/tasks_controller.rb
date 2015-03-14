@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
   def create
   	@task = current_user.tasks.new(task_params)
-    #@task.user_id = current_user.user_id if current_user
+    # @task.user_id = current_user.user_id if current_user
   	if @task.save
   		redirect_to tasks_path
     else
