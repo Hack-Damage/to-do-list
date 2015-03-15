@@ -56,6 +56,8 @@
                               .style("text-anchor", "middle")
                               .text(function(d) { return d; });
 
+
+
                       //                      formatting the day squares on the heat map
                       var rect = svg.selectAll(".day")
                               .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
@@ -65,20 +67,43 @@
                               .attr("height", cellSize)
                               .attr("x", function(d) { return week(d) * cellSize; })
                               .attr("y", function(d) { return day(d) * cellSize; })
+                              .attr("id", function(d){
+                                  return d.id; //<-- Sets the ID
+                              })
+//                              .on("click", click)
                               .datum(format);
 
-                      //                      id = name + i -- attr("id, a + num
+                                //working on click event- not working yet
+//                              function click() {
+//                                  if (d3.select(this).style({"opacity" = .9, "stroke"  = "grey"})){
+//                                      (d3.select(this).style({"opacity" = 0, "stroke" = none})));
+//                                  }
+//                              }
 
-                      //                      hard coding the day red
-                      //                      document.getElementsByTagName(rect[0][1].style.fill = "red");
+//                      $("rect"[0]).change(MouseClick)
+//                        function mouseClick(){
+//                            var key = $(this)
+//                                    .children(":selected")
+//                                    .val();
+//
+//                            mouseClick({id : key});
+//                        }
 
 
-                      //                      formatting the month
+                      // formatting the month
                       svg.selectAll(".month")
                               .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
                               .enter().append("path")
                               .attr("class", "month")
                               .attr("d", monthPath);
+                                //mouseover event not functioning yet
+//                              .on("mouseover", function(){
+//                                  d3.selectAll(this).style("opcaity",.4);
+//                              })
+//                              .on("mouseout", mapMouseOut);
+
+
+
 
                       var dataset;
                       var taskData = [];
@@ -101,11 +126,11 @@
                                   // the code inside this function will be run,
                                   // when the $.getJSON finishes retrieving the data
                                   dataset = data;
-                                  console.log(data);
+//                                  console.log(data);
 
                                   // selecting just the task objects
                                   var objies = data.tasks;
-                                  console.log("objies", objies);
+//                                  console.log("objies", objies);
 //                                  var objies = $.each(data.tasks, function(){ //changed this from data.tasks to data
 //                                      // changed this from console logging objies to data.tasks
 //                                      console.log("objies", objies);
@@ -117,11 +142,11 @@
                                       updateTimes = objies[i].updated_at.substring(0,10);
 //                                      console.log("update times", updateTimes);
 //                                      testing datetoflo function
-                                      console.log("we are taking in and returning",updateTimes, dateToFlo(updateTimes));
+//                                      console.log("we are taking in and returning",updateTimes, dateToFlo(updateTimes));
                                       taskData.push([dateToFlo(updateTimes)]);
                                   });
                                   make_lex(taskData);
-                                  console.log("lex lex lex", lex);
+//                                  console.log("lex lex lex", lex);
 
                                   // this takes fills the day squares with the correct shade of green
                                   // based on accomplished tasks

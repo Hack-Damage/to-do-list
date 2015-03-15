@@ -1,7 +1,7 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
+svg {
   font: 10px sans-serif;
   shape-rendering: crispEdges;
 }
@@ -16,4 +16,5 @@ body {
   fill: none;
   stroke: #000;
   stroke-width: 2px;
+  opacity: 0.9;
 }
