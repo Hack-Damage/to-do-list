@@ -24,15 +24,19 @@
 			<div class="tasks">
 				<%# if @incomplete_partner_tasks == nil %>
 				<%# else %>
-				<% @partner_tasks.each do |t| %>
-				<div class="notDoneTask">
-					<div class="deleter">
-						<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+				<% if @current_partner == nil %>
+					<b><%= link_to 'Match up with another user!', dashboard_path(current_user.id), method: :patch, :class => 'boxLink' %>
+						
+				<% else %>
+					<% @partner_tasks.each do |t| %>
+					<div class="notDoneTask">
+						<div class="deleter">
+							<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+						</div>
+						<span class="taskText"><%= t.name %></span>
 					</div>
-					<span class="taskText"><%= t.name %></span>
-				</div>
-
-				<%# end %>
+					
+					<% end %>
 				<% end %>
 
 <!-- 			<%#= form_for current_user do |f| %>
