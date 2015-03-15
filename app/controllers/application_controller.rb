@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
     @current_user_incomplete = @current_user_tasks.where(is_complete: false)
     @current_user_comments = Comment.where(user_id:current_user)
    
+   #Need an inverse to get it to work on the partner page. 
 
     if current_user
       @current_partner = User.where(id:current_user.matchee).first
@@ -31,10 +32,12 @@ class ApplicationController < ActionController::Base
       
       @current_user_comments_recieved = Comment.where(user_id:current_user.matchee)
       @comments = @current_user_comments + @current_user_comments_recieved
-      
+      @comments_sorted = @comments.sort_by &:created_at
 
       puts "======================"
+      puts "current user id:"
       puts current_user.id
+      puts "current matchee:"
       puts current_user.matchee
 
 
