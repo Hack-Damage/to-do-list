@@ -1,3 +1,7 @@
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+
 <div class="all">
 	<div class="container">
 		<div class="left-col">
@@ -16,6 +20,184 @@
 			<div class="dashboard">
 				<div class="stats">
 				<h2>Stats</h2>
+                  <script>
+
+                      //<!--setting the calendar size-->
+                      var width = 960,
+                              height = 136,
+                              cellSize = 17; // cell size
+
+                      //setting the day format
+                      var day = d3.time.format("%w"),
+                              week = d3.time.format("%U"),
+                              percent = d3.format(".1%"),
+                              format = d3.time.format("%Y-%m-%d");
+
+                      //setting the color
+                      var color = d3.scale.quantize()
+//                              .domain([0, 1])
+                              .domain([-.05, .05])
+                              .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
+
+                      //setting the svg window
+                      var svg = d3.select("body").selectAll("svg")
+                              .data(d3.range(2015, 2016))
+                              .enter().append("svg")
+                              .attr("width", width)
+                              .attr("height", height)
+                              .attr("class", "RdYlGn")
+                              .append("g")
+                              .attr("transform", "translate(" + ((width - cellSize * 53) / 2) + "," + (height - cellSize * 7 - 1) + ")");
+
+                      //                      setting the year text
+                      svg.append("text")
+                              .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")
+                              .style("text-anchor", "middle")
+                              .text(function(d) { return d; });
+
+                      //                      formatting the day squares on the heat map
+                      var rect = svg.selectAll(".day")
+                              .data(function(d) { return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+                              .enter().append("rect")
+                              .attr("class", "day")
+                              .attr("width", cellSize)
+                              .attr("height", cellSize)
+                              .attr("x", function(d) { return week(d) * cellSize; })
+                              .attr("y", function(d) { return day(d) * cellSize; })
+                              .datum(format);
+
+                      //                      id = name + i -- attr("id, a + num
+
+                      //                      hard coding the day red
+//                      document.getElementsByTagName(rect[0][1].style.fill = "red");
+
+
+                      //                      formatting the month
+                      svg.selectAll(".month")
+                              .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+                              .enter().append("path")
+                              .attr("class", "month")
+                              .attr("d", monthPath);
+
+                      var dataset;
+                      var taskData = [];
+                      var lex = [];
+                      var make_lex = function(td){
+                          //fill lex with 365 0's
+                          for(var z=0; z<365; z++){
+                              lex[z] = 0;
+                          }
+                          //for all of the task data, which are day numbers
+                          //add 1 to lex corresponding with that day number
+                          $.each(td, function(datum){
+                              lex[taskData[datum][0]] ++;
+//                              console.log("Hi, I'm lex",lex);
+                          });
+                      };
+                      //                      grabbing our JSON data
+                      $.getJSON('/tasks.json',
+                              function(data) {
+                                  // the code inside this function will be run,
+                                  // when the $.getJSON finishes retrieving the data
+                                  dataset = data;
+                                  console.log(data);
+
+                                  // selecting just the task objects
+                                  var objies = data.tasks;
+                                  console.log("objies", objies);
+//                                  var objies = $.each(data.tasks, function(){ //changed this from data.tasks to data
+//                                      // changed this from console logging objies to data.tasks
+//                                      console.log("objies", objies);
+//                                      return objies;
+//                                  });
+
+//                                  selecting the task updated_at times
+                                  $.each(objies, function(i){
+                                      updateTimes = objies[i].updated_at.substring(0,10);
+//                                      console.log("update times", updateTimes);
+//                                      testing datetoflo function
+                                      console.log("we are taking in and returning",updateTimes, dateToFlo(updateTimes));
+                                      taskData.push([dateToFlo(updateTimes)]);
+                                  });
+                                  make_lex(taskData);
+                                  console.log("lex lex lex", lex);
+
+                      // this takes fills the day squares with the correct shade of green
+                      // based on accomplished tasks             
+                      for (var l = 0; l< rect[0].length; l++){
+                          if(lex[l] == 0)
+                              document.getElementsByTagName(rect[0][l].style.fill = "#eee");
+                          //                          console.log(rect[0][l]);
+                          else if (lex[l] <= 2)
+                              document.getElementsByTagName(rect[0][l].style.fill = "#d6e685");
+                          else if (lex[l] <= 4)
+                              document.getElementsByTagName(rect[0][l].style.fill = "#8cc665");
+                          else if (lex[l] <= 7)
+                              document.getElementsByTagName(rect[0][l].style.fill = "#44a340");
+                          else
+                              document.getElementsByTagName(rect[0][l].style.fill = "#1e6823");
+
+                      }
+                              });
+//
+//                      //this takes in the updated_at date and converts it to the day number
+                      function dateToFlo (taskDate){
+                          var dateNum;
+                          if (taskDate.substring(5,7) == "01"){
+                              dateNum = parseInt(taskDate.substring(8,10));
+                          }
+                          else if (taskDate.substring(5,7) == "02"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 31;
+                          }
+                          else if (taskDate.substring(5,7) == "03"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 59;
+                          }
+                          else if (taskDate.substring(5,7) == "04"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 90;
+                          }
+                          else if (taskDate.substring(5,7) == "05"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 120;
+                          }
+                          else if (taskDate.substring(5,7) == "06"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 151;
+                          }
+                          else if (taskDate.substring(5,7) == "07"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 181;
+                          }
+                          else if (taskDate.substring(5,7) == "08"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 212;
+                          }
+                          else if (taskDate.substring(5,7) == "09"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 243;
+                          }
+                          else if (taskDate.substring(5,7) == "10"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 273;
+                          }
+                          else if (taskDate.substring(5,7) == "11"){
+                              dateNum = parseInt(taskDate.substring(8,10)) + 304;
+                          }
+                          else{
+                              dateNum = parseInt(taskDate.substring(8,10)) + 334;
+                          }
+                          return dateNum;
+                      }
+
+
+
+                      // formatting the month lines
+                      function monthPath(t0) {
+                          var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
+                                  d0 = +day(t0), w0 = +week(t0),
+                                  d1 = +day(t1), w1 = +week(t1);
+                          return "M" + (w0 + 1) * cellSize + "," + d0 * cellSize
+                                  + "H" + w0 * cellSize + "V" + 7 * cellSize
+                                  + "H" + w1 * cellSize + "V" + (d1 + 1) * cellSize
+                                  + "H" + (w1 + 1) * cellSize + "V" + 0
+                                  + "H" + (w0 + 1) * cellSize + "Z";
+                      }
+
+                      d3.select(self.frameElement).style("height", "2910px");
+                  </script>
 				</div>
 				<div class="profile">
 					<h2>Profile</h2>
