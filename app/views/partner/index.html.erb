@@ -64,13 +64,14 @@
         <tr>
         	<td><%#= render 'form' %></td>
         </tr>
-        <% if @comments == nil %>
-        <% else %>
-        <% @comments.each do |c| %>
-        	<%= c.title %>
-        	<%= c.user.email %>
-        <% end %>	
-        <% end %>
+        <%# if @comments == nil %>
+        <%# else %>
+        <td><%= render 'tasks/comment' %></td>
+        <%# @comments.each do |c| %>
+        	<%#= c.title %>
+        	<%#= c.user.email %>
+        <%# end %>	
+        <%# end %>
 
       
     	</div>

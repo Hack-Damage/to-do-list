@@ -19,11 +19,11 @@
 				</div>
 				<div class="profile">
 					<h2>Profile</h2>
-						<b><p><%= link_to 'Edit profile', edit_user_registration_path, :class => 'dashLink' %> </p></b>
+						<b><p><%= link_to 'Edit profile', edit_user_registration_path, :class => 'boxLink' %> </p></b>
 						<% if current_user.matchee == nil %>
 							<b><%= link_to 'Match up with another user', dashboard_path(current_user.id), method: :patch, :class => 'boxLink' %>
 						<% else %>
-							<%= link_to "You're already matched up, but clicking this will match you up with another user", dashboard_path(current_user.id), method: :patch %></b>
+							<%= link_to "You're already matched up, but clicking this will match you up with another user", dashboard_path(current_user.id), method: :patch, :class => 'boxLink' %></b>
 						<% end %>
 				</div>
 
