@@ -23,18 +23,21 @@ class ApplicationController < ActionController::Base
 
     if current_user
       @current_partner = User.where(id:current_user.matchee).first
-
-      @incomplete_partner_tasks = Task.where(user_id:@current_partner.id, is_complete: false)
+      # TODO This throws an error on sign up because there is no matched partner. 
+      if @current_partner != nil
+        @incomplete_partner_tasks = Task.where(user_id:@current_partner.id, is_complete: false)  
+        @partner_tasks = Task.where(user_id:@current_partner.id, is_complete: false)
+      end
+      
       @current_user_comments_recieved = Comment.where(user_id:current_user.matchee)
       @comments = @current_user_comments + @current_user_comments_recieved
-      @partner_tasks = Task.where(user_id:@current_partner.id, is_complete: false)
+      
 
       puts "======================"
       puts current_user.id
       puts current_user.matchee
 
-      puts @current_partner.matchee
-      puts @partner_tasks
+
       puts "======================"
     
     # @current_user_comments_recieved = Comment.where(user_id:current_user.matchee) 

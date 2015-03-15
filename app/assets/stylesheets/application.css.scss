@@ -157,12 +157,48 @@ a {
 }
 
 .commentbox {
- 
   border-width:0 4px 4px 0;
   display:block;
   height:1em; width:.5em;
   margin-top:-.9em;
   position:relative;
 }	
+.jumbotron {
+	text-align: center;
+	padding: 30px;
+	h1 {
+		font-size: 44px;
+		padding-bottom: 10px;
+	}
+	h3 {
+		font-weight: 300;	
+	}	
+}
+.midSection {
+	h2 {
+		text-align: center;
+		font-size: 28px;
+		padding-bottom: 30px;
+	}
+	.oneTwoThree{
+		height: 200px;
+		.midBox {
+			text-align: center;
+			float: left;
+			width: 33%;
+			.circleText {
+				padding: 18px;
+				font-weight: 700;
+				color: white;
+				border-radius: 60%;
+				background-color: #123456;
+			}
+			.boxText {
+				padding-top: 22px;
+				margin: 20px auto;
+			}
+		}
+	}
+}
 
 
