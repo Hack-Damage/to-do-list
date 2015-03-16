@@ -5,13 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+200.times do 
+	Task.create([
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at: Date.new(2015,Random.rand(12)+1,Random.rand(28)+1) },
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at:Date.new(2015,Random.rand(12)+1,Random.rand(28)+1)},
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at:Date.new(2015,Random.rand(12)+1,Random.rand(28)+1)},
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at:Date.new(2015,Random.rand(12)+1,Random.rand(28)+1)},
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at:Date.new(2015,Random.rand(12)+1,Random.rand(28)+1)},
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at:Date.new(2015,Random.rand(12)+1,Random.rand(28)+1)},
+	                {name: Random.rand(1000).to_s, is_complete: true, user_id: 13, updated_at:Date.new(2015,Random.rand(12)+1,Random.rand(28)+1)}
+	            ])
 
-Task.create([
-                {name: "Let's make a task", is_complete: false, user_id: 2, },
-                {name: "Clean kitchen", is_complete: false, user_id: 2, },
-                {name: "Walk Grandpa", is_complete: false, user_id: 2, },
-                {name: "Stretch", is_complete: false, user_id: 2, },
-                {name: "Go to the gym", is_complete: true, user_id: 2, },
-                {name: "Get groceries", is_complete: true, user_id: 2, },
-                {name: "Call mom", is_complete: true, user_id: 2, },
-            ])
+end
