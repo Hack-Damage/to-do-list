@@ -15,5 +15,4 @@ deploy:
   app: fllwthru
   run:
   - "rake db:migrate"
-  - "rake assets:precompile"
   - restart
