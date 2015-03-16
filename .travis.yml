@@ -14,5 +14,5 @@ deploy:
     secure: ddKuxa9Hv5udOjrc0DHXaTZERjajncNojECPNeADJiSq5aFxwRalAMV8vYwSsYYdvPj2ruZEvwthgZw96z1nEsHVg7ZI8Urgagm9zNM9NzVuJVozVrWxCRkwCfX1XybKtX0c5ACRNcjmpcZir77bV+EtAtDeJwoMhtWxwwp8urI=
   app: fllwthru
   run:
-  	- "rake db:migrate"
-  	- restart
+  - "rake db:migrate"
+  - restart
