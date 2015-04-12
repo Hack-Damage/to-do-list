@@ -21,6 +21,7 @@ body {
 	background: url(http://i.imgur.com/lF6cy3r.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 hr {
 	height: 1px;
@@ -156,12 +157,15 @@ a {
 	color: black;
 }
 
-.commentbox {
-  border-width:0 4px 4px 0;
-  display:block;
-  height:1em; width:.5em;
-  margin-top:-.9em;
-  position:relative;
+.commenbox {
+	h2 {
+		font-weight: 400;
+	}
+	.paren {
+		font-weight: 300;
+		font-size: 12px;
+	}
+	padding-left: 29px;
 }	
 .jumbotron {
 	text-align: center;
@@ -211,4 +215,7 @@ a {
 	}
 }
 
+.getStarted {
+	text-align: center;
+}
 

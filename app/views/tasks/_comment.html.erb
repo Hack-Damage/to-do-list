@@ -3,7 +3,7 @@
 
  <% @comments_sorted.reverse.each do |c| %>
    <b><%= c.user.email.split('@').first %></b> :
-    <%= c.title %>  <i>(<%= time_ago_in_words(c.created_at) %>)</i><br />
+    <%= c.title %>  <span class="paren"<i>(<%= time_ago_in_words(c.created_at) %>)</i></span><br />
     
 <%end %>   
 

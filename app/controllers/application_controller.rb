@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-    def index
+  def index
     @tasks = Task.all
     #assign an instance variable to the current user tasks so we can list these
     #on the tasks page for the user that is signed in
@@ -42,14 +42,6 @@ class ApplicationController < ActionController::Base
 
 
       puts "======================"
-    
-    # @current_user_comments_recieved = Comment.where(user_id:current_user.matchee) 
-   # dan is messing aroun8d below this line
-   # partner_tasks is what we need to iterate through on the partner page.
-   # while we're at it, i'll iterate through current user tasks on our task page. 
-     # me = User.where(id: current_user).first
-     # @partner = User.where(id: me.matchee).first
-# update to only show is not complete. 
     
 
     #if your tasks are nil it throws up. Here's the fix:

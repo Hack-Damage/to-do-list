@@ -31,11 +31,11 @@
 					<% @partner_tasks.each do |t| %>
 					<div class="notDoneTask">
 						<div class="deleter">
-							<span class='xButton'>&nbsp&nbsp<%= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
+							<span class='xButton'>&nbsp&nbsp<%#= link_to "X", task_path(t.id), method: :patch %>&nbsp&nbsp&nbsp&nbsp</span>
 						</div>
 						<span class="taskText"><%= t.name %></span>
 					</div>
-					
+					<hr />
 					<% end %>
 				<% end %>
 
@@ -53,7 +53,7 @@
 						</span>
 					</div>
  -->
-					<hr>
+					
 					<%# end %>
 					<%#= builder.check_box :is_complete%>
 				<%# end %>
@@ -98,12 +98,12 @@
 	// });
 	// Switch between task done and not done.
 	// make the delete button appear
-	$('.notDoneTask').click(function(){
-		$(this).toggleClass('doneTask').toggleClass('notDoneTask');
-		if($(this).hasClass('doneTask')){
-			// $('.deleter').show();
-		}
-	})
+	// $('.notDoneTask').click(function(){
+	// 	$(this).toggleClass('doneTask').toggleClass('notDoneTask');
+	// 	if($(this).hasClass('doneTask')){
+	// 		// $('.deleter').show();
+	// 	}
+	// })
 
 // </script>
 
