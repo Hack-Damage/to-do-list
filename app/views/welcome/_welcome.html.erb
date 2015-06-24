@@ -9,7 +9,42 @@
 			</div>
 		</div>
 		<div class="main-col">
-			<div class="jumbotron">
+			<div class="contentBox">
+				<div class="titleBox">
+					<h1>Follow Thru</h1>
+					<h1 class="peachy">The to-do list you won't ignore</h1>
+				</div>
+				<div class="columnHolder">
+					<div class="lefty">
+						<div class="colBox">
+							<h3 class="colTitle">
+								What is Follow Thru?
+							</h3>
+							<p>
+								This is a to-do list that pairs you with another person. You both hold each other accountable for finishing what you say you're going to do, resulting in higher productivitiy for everyone. 
+							</p>
+							<p>Sign up today and get productive!</p>
+							<div class="getStarted">
+								<h2>Get Started Today!</h2>
+								<p><%= link_to "Start Finishing Things", new_user_registration_path, :class => 'boxLink'  %>    or    <%= link_to "Login", new_user_session_path, :class => 'boxLink'  %></p>
+							</div>
+						</div>
+					</div>
+					<div class="righty">
+						<div class="colBox">
+							<h3 class="colTitle">
+								How it Works:
+							</h3>
+							<p>1. Add your tasks</p>
+							<p>2. Anonymously match with another user</p>
+							<p>3. Hold each other accountable for finishing what you say you're going to do</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End New Code -->
+			<!-- Old Code Below -->
+			<!-- <div class="jumbotron">
 				<h1>Follow Thru</h1>
 				<h3>The todo list you won't ignore</h3>
 			</div>
@@ -38,8 +73,8 @@
 			</div>
 			<div class="getStarted">
 				<h2>Get Started Today!</h2>
-				<p><%= link_to "Sign up", new_user_registration_path, :class => 'boxLink'  %>    or    <%= link_to "Login", new_user_session_path, :class => 'boxLink'  %></p>
-			</div>		
+				<p><%#= link_to "Sign up", new_user_registration_path, :class => 'boxLink'  %>    or    <%#= link_to "Login", new_user_session_path, :class => 'boxLink'  %></p>
+			</div> -->		
    		</div>
 	</div>
 </div>
